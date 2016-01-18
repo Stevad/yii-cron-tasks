@@ -1,7 +1,7 @@
 The yii-cron-tasks is free software. It is released under the terms of
 the following BSD License.
 
-Copyright (c) 2015 by Stevad.
+Copyright (c) 2016 by Stevad.
 
 All rights reserved.
 
