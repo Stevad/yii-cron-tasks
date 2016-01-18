@@ -1,0 +1,18 @@
+{
+  "name": "stevad/yii-cron-tasks",
+  "description": "Yii extension to execute console commands by cron schedule in your application",
+  "keywords": ["yii", "extension", "cron", "schedule"],
+  "homepage": "https://github.com/stevad/yii-cron-tasks",
+  "type": "yii-extension",
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": ">=5.3.0",
+    "yiisoft/yii": ">=1.1.16"
+  },
+  "authors": [
+    {
+      "name": "Vadym Stepanov",
+      "email": "vadim.stepanov.ua@gmail.com"
+    }
+  ]
+}
