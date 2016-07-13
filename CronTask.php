@@ -452,7 +452,7 @@ class CronTask
             $canRun[$field] = in_array($value, $this->_allowedValues[$field], true);
         }
 
-        return $canRun['minute'] && $canRun['hour'] && $canRun['month'] && ($canRun['day'] || $canRun['dayOfWeek']);
+        return $canRun['minute'] && $canRun['hour'] && $canRun['month'] && $canRun['day'] && $canRun['dayOfWeek'];
     }
 
     /**
