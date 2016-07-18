@@ -438,7 +438,7 @@ class CronTask
             'hour' => $date['hours'],
             'day' => $date['mday'],
             'month' => $date['mon'],
-            'dayOfWeek' => $date['wday'] - 1,
+            'dayOfWeek' => $date['wday'],
         );
 
         $canRun = array();
