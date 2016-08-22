@@ -143,8 +143,6 @@ class CronTask
 
         $clearedParams = array();
         foreach ($params as $key => $value) {
-            $key = escapeshellcmd($key);
-            $value = escapeshellcmd($value);
             if (!preg_match('/^[a-z]+\w+$/i', $key)) {
                 throw new InvalidArgumentException(
                     "Bad param name: '{$key}'. It must contain alphanumeric values and/or underscore."
