@@ -278,6 +278,7 @@ class CronProcess
     /**
      * Serialize current instance attributes to the file.
      * Allowed only in CLI mode.
+     * @return void
      */
     private function saveInfoFile()
     {
@@ -286,6 +287,7 @@ class CronProcess
         unset($data['_service'], $data['_wrapperCommand']);
 
         file_put_contents($this->getInfoFileName(), json_encode($data), LOCK_EX);
+        chmod($this->getInfoFileName(), 0777);
     }
 
     /**
