@@ -126,15 +126,15 @@ class CronTask
             );
         }
 
-        if (!preg_match('/^[a-z0-9]+$/i', $command)) {
+        if (!preg_match('/^[a-z0-9\-_]+$/i', $command)) {
             throw new InvalidArgumentException(
-                'Specified command value is not valid. Valid examples: myConsole, import'
+                'Specified command value is not valid. Valid examples: myConsole, import, product-feed'
             );
         }
 
         if (!empty($action) && !preg_match('/^[a-z0-9\-_]+$/i', $action)) {
             throw new InvalidArgumentException(
-                'Specified action value is not valid. Valid examples: run, index, start'
+                'Specified action value is not valid. Valid examples: run, index, force-start'
             );
         }
 
