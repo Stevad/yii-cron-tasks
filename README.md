@@ -140,4 +140,4 @@ $task->daily()->hour(18);
 Author
 -------------
 
-Copyright (c) 2016 by Stevad.
+Copyright (c) 2017 by Stevad.

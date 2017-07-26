@@ -20,7 +20,7 @@
  * How to add and run task see CronService class description.
  *
  * @author Vadym Stepanov <vadim.stepanov.ua@gmail.com>
- * @date 18.01.2016
+ * @date 26.07.2017
  */
 class CronTask
 {
@@ -132,7 +132,7 @@ class CronTask
             );
         }
 
-        if (!empty($action) && !preg_match('/^[a-z0-9]+$/i', $action)) {
+        if (!empty($action) && !preg_match('/^[a-z0-9\-_]+$/i', $action)) {
             throw new InvalidArgumentException(
                 'Specified action value is not valid. Valid examples: run, index, start'
             );
