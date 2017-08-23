@@ -44,6 +44,7 @@ class CronCommand extends CConsoleCommand
     {
         if (!$this->enabled) {
             CronService::log("Cron command processor is disabled", CLogger::LEVEL_WARNING);
+            return;
         }
         
         $this->_service->loadTasks();
@@ -73,6 +74,7 @@ class CronCommand extends CConsoleCommand
     {
         if (!$this->enabled) {
             CronService::log("Cron command processor is disabled", CLogger::LEVEL_WARNING);
+            return;
         }
         
         CronProcess::createById($id, $this->_service)->run();
