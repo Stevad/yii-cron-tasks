@@ -9,7 +9,7 @@ last start and stop time and current status of execution (with PID).
 
 For license information check the [LICENSE](LICENSE.md) file.
 
-Tested on Yii Framework v1.1.16.
+Tested on Yii Framework v1.1.16+.
 
 Installation
 -------------
@@ -40,7 +40,8 @@ return array(
     ),
     'commandMap' => array(
         'cron' => array(
-            'class' => 'ext.yii-cron-tasks.CronCommand'
+            'class' => 'ext.yii-cron-tasks.CronCommand',
+            'enabled' => true  // you can use this flag to quickly disable cron CLI commands if required
         ),
     ),
 );
