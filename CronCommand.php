@@ -12,13 +12,18 @@
  * with params, last start and stop time and current status.
  *
  * @author Vadym Stepanov <vadim.stepanov.ua@gmail.com>
- * @date 18.01.2016
+ * @date 23.08.2017
  */
 class CronCommand extends CConsoleCommand
 {
+    /** 
+     * @var bool Flag to control if processing of the cron tasks is enabled
+     */
+    public $enabled = true;
     /** @var CronService */
     private $_service;
 
+    
     /**
      * @inheritdoc
      */
@@ -37,6 +42,10 @@ class CronCommand extends CConsoleCommand
      */
     public function actionDaemon()
     {
+        if (!$this->enabled) {
+            CronService::log("Cron command processor is disabled", CLogger::LEVEL_WARNING);
+        }
+        
         $this->_service->loadTasks();
 
         /** @var CronTask $task */
@@ -62,6 +71,10 @@ class CronCommand extends CConsoleCommand
      */
     public function actionRun($id)
     {
+        if (!$this->enabled) {
+            CronService::log("Cron command processor is disabled", CLogger::LEVEL_WARNING);
+        }
+        
         CronProcess::createById($id, $this->_service)->run();
     }
 
@@ -71,6 +84,8 @@ class CronCommand extends CConsoleCommand
     public function actionIndex()
     {
         $this->_service->loadTasks();
+        
+        echo 'Cron processor status: ' . ($this->enabled ? 'ACTIVE' : 'DISABLED') . "\n\n";
 
         /** @var CronTask $task */
         foreach ($this->_service->getActiveTasks() as $task) {
