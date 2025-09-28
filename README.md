@@ -1,6 +1,9 @@
 yii-cron-tasks
 =================
 
+> [!WARNING]
+> This repository is not maintained anymore!
+
 Simple extension to create and execute scheduled console commands in Yii Framework 1.x application.
 
 It allows to create tasks with powerful cron syntax. Each task can be unique to disallow overlapping (with
